@@ -11,7 +11,7 @@ def index_page():
 
 
 @app.route('/game')
-def index_page():
+def game_page():
     return render_template('game.html')
 
 
