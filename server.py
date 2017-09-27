@@ -10,9 +10,10 @@ def index_page():
     return render_template('index.html')
 
 
-@app.route('/game')
+@app.route('/game', methods=['POST'])
 def game_page():
-    return render_template('game.html')
+    data = request.form.to_dict()
+    return render_template('game.html', data=data)
 
 
 if __name__ == "__main__":

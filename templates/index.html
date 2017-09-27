@@ -1,19 +1,22 @@
 {% extends "base.html" %}
 {% block title %}Memory game{% endblock %}
 {% block content %}
-    Please select a number
-    <form action="/game">
-        <select>
+    Please select the table size:<br><br>
+    
+    <form action="/game" method="POST">
+        <label for="x_value">Number of columns:</label><br>
+        <select name="x_value">
             {% for i in range(1, 9) %}
-                <option value="{{ i }}">{{ i }}</option>
+                <option {% if i==5 %} selected {% endif %} value="{{ i }}">{{ i }}</option>
             {% endfor %}
-        </select>
-        <select>
+        </select><br>
+        <label for="x_value">Number of rows:</label><br>        
+        <select name="y_value">
                 {% for i in range(2, 9, 2) %}
-                <option value="{{ i }}">{{ i }}</option>
+                <option {% if i==4 %} selected {% endif %} value="{{ i }}">{{ i }}</option>
             {% endfor %}
         </select>
-        <br>
+        <br><br>
         <input type="submit">
     </form>
 {% endblock %}
