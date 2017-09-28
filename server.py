@@ -10,10 +10,11 @@ def index_page():
     return render_template('index.html')
 
 
-@app.route('/game', methods=['POST'])
+@app.route('/game', methods=['GET'])
 def game_page():
-    data = request.form.to_dict()
-    return render_template('game.html', data=data)
+    rows = request.args.get('row_num')
+    cols = request.args.get('column_num')
+    return render_template('game.html', rows=rows, cols=cols)
 
 
 if __name__ == "__main__":

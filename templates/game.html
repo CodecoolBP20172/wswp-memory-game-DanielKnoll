@@ -1,4 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Memory game{% endblock %}
 {% block content %}
+    rows: {{ rows }}
+    cols: {{ cols }}
+    <div id="game" data-rows='{{ rows }}' data-cols='{{ columns }}' ></div>
 {% endblock %}
