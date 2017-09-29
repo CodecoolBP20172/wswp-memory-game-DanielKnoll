@@ -15,7 +15,7 @@ def index_page():
 def game_page():
     rows = int(request.args.get('row_num'))
     cols = int(request.args.get('column_num'))
-    if rows == '0' or cols == '0':
+    if rows == 0 or cols == 0:
         return redirect(url_for('index_page'))
     cards = get_necessary_number_of_card_names(cols, rows)
     return render_template('game.html', rows=rows, cols=cols, cards=cards)
