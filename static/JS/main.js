@@ -59,6 +59,9 @@ function init() {
                         unflip(clickedCard, cardImage);
                         unflip(lastClickedCard, lastCardImage);
                     }, 1000)
+                } else {
+                    clickedCard.style.color = "green";
+                    lastClickedCard.style.color = "green";
                 }
             }
         }
