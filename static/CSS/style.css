@@ -26,3 +26,17 @@ body {
     background-image: url('../img/front.png');
     background-size: contain;
 }
+
+/* Victory sign */
+#game h2 {
+    height: 220px;
+    width: 425px;
+    margin: 0px auto;
+    padding-top: 175px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 72px;
+    color: green;
+    text-shadow: 1px 1px 1px black;
+    background-image: url('../img/penguin.png');
+}
