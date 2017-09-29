@@ -1,5 +1,54 @@
 body {
-    background-color: lightblue;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;    
+    background: linear-gradient(#466788 1%,#9acd9a 100%),#9acd9a;
+    background-repeat: no-repeat;
+}
+
+header {
+    margin-bottom: 50px;
+    background: linear-gradient(to bottom right, #4f8846, #d6c612);
+    border-width: 5px 0px 5px 0px;
+    border-style: solid;
+    border-color: #cebe22;
+}
+
+header #image {
+    height: 10px;
+    padding: 35px;
+    background-image: url('../img/penguin.png'), url('../img/pat2.png');
+    background-position: right top, left top;
+    background-repeat: no-repeat, repeat;
+    background-size: 230px, auto;
+}
+
+#game-info-text, #greeting{
+    height: 30px;
+    width: 250px;
+    padding: 12px;
+    background: #224f84;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    border: 3px solid white;
+    
+}
+#game-info-text {
+    border-radius: 20px 0px 0px 20px;
+    border-right: 2px solid #56b695;
+}
+
+#greeting {
+    background: #38828c;
+    border-radius: 0px 20px 20px 0px;
+    border-left: none;
+}
+
+#game-info-value {
+    padding: 6px;
+    background: #436892;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px 1px black inset;
+    
 }
 
 #game {
@@ -34,7 +83,6 @@ body {
     margin: 0px auto;
     padding-top: 175px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 72px;
     color: green;
     text-shadow: 1px 1px 1px black;
