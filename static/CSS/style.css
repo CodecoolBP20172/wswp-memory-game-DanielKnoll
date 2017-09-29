@@ -13,15 +13,14 @@ body {
     width: 150px;
     margin: 2px 5px;
     padding-top: 15px;
-    border-radius: 10px;
+    border-radius: 5px;
+    color: #7d7d7d;
     box-shadow: 1px 1px 1px black;
-    
 }
 
 .card-back {
     background-image: url('../img/back.png');
-    background-repeat: no-repeat;
 }
 .card-front {
-    background-color: wheat;
+    background-image: url('../img/front.png');
 }
