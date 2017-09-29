@@ -4,8 +4,20 @@
 {% endblock %}
 {% block title %}Memory game{% endblock %}
 {% block content %}
-    rows: {{ rows }}
-    cols: {{ cols }}
+    <header>
+        You selected a <span>{{ rows }} x {{ cols }}</span> board. 
+        <span>
+            {% if (rows or cols) < 3 %}
+                Going for the easy win, huh?
+            {% elif (rows and cols) > 6 %}
+                This will take a while
+            {% else %}
+                Good luck!
+            {% endif %}
+        </span>
+    </header> 
+
     <div id="game" data-rows='{{ rows }}' data-cols='{{ cols }}' data-cards='{{ cards }}'></div>
+
     <a class="button" id="back" href="{{url_for('index_page')}}">I give up</a>
 {% endblock %}
