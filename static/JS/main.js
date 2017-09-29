@@ -87,7 +87,8 @@ function init() {
             table.parentNode.removeChild(table);
             var win = document.createElement('h2');
             game.appendChild(win);
-            win.innerHTML = "You win!" ;
+            win.innerHTML = "You win!";
+            document.getElementById("back").innerHTML = "New Game";
         }
     }
 
