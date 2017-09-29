@@ -9,10 +9,10 @@ body {
 
 #game i {
     text-align: center;
-    height: 85px;
-    width: 150px;
+    height: 77px;
+    width: 130px;
     margin: 2px 5px;
-    padding-top: 15px;
+    padding-top: 10px;
     border-radius: 5px;
     color: #7d7d7d;
     box-shadow: 1px 1px 1px black;
@@ -20,7 +20,9 @@ body {
 
 .card-back {
     background-image: url('../img/back.png');
+    background-size: contain;
 }
 .card-front {
     background-image: url('../img/front.png');
+    background-size: contain;
 }
