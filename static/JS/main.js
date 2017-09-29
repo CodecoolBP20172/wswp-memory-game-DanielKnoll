@@ -1,9 +1,12 @@
 function init() {
-    var cardBackground = 'card-back';
+    var game = document.getElementById('game');
+    var table = document.createElement('table');    
     var images = game.dataset.cards;
     images = images.slice(2,-2).split("', '");
     images.sort(function () {return 0.5 - Math.random()});
     var cards = document.getElementsByTagName('i');
+    var cardsLeft = images.length;
+    var cardBackground = 'card-back';    
     var oddClick = true;
     var lastClickedCardIndex;
 
@@ -13,15 +16,13 @@ function init() {
     }
 
     function generateTable() {
-        var game = document.getElementById('game');
-        var rows = game.dataset.rows;
-        var cols = game.dataset.cols;
+        let rows = game.dataset.rows;
+        let cols = game.dataset.cols;
+        let counter = 0;
 
-        var table = document.createElement('table');
-        var counter = 0;
-        for (var r = 0; r < rows; r++) {
+        for (let r = 0; r < rows; r++) {
             tr = document.createElement("tr");
-            for (var c = 0; c < cols; c++) {
+            for (let c = 0; c < cols; c++) {
                 i = document.createElement("i");
                 i.setAttribute('class', 'fa fa-4x ' + cardBackground);
                 td = document.createElement("td");
@@ -29,17 +30,17 @@ function init() {
                 tr.appendChild(td);
                 counter++;
             }
-            table.appendChild(tr)
+            table.appendChild(tr);
         } 
-        game.appendChild(table)    
+        game.appendChild(table);
     }
 
     function addCardEventListeners() {
-            for (let i = 0; i < cards.length; i++) {
-            cards[i].addEventListener("click", function(event) {
-                clickHandler(i);
+        for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener("click", function(event) {
+            clickHandler(i);
             });
-            }
+        }
     }
 
     function clickHandler(index) {
@@ -62,6 +63,8 @@ function init() {
                 } else {
                     clickedCard.style.color = "green";
                     lastClickedCard.style.color = "green";
+                    cardsLeft -= 2;
+                    victory();
                 }
             }
         }
@@ -77,6 +80,15 @@ function init() {
         clickedCard.classList.remove(classToRemove);
         clickedCard.classList.remove('card-front');
         clickedCard.classList.add(cardBackground);
+    }
+
+    function victory() {
+        if (cardsLeft === 0) {
+            table.parentNode.removeChild(table);
+            var win = document.createElement('h2');
+            game.appendChild(win);
+            win.innerHTML = "You win!" ;
+        }
     }
 
     main();
