@@ -27,15 +27,14 @@ h1 {
 }
 
 #wrapper {
-    width: 75%;    
+    width: 80%;    
     margin: 0px auto;
 }
 
-
 #game-description {
     float: left;
-    width: 570px; /*50%;*/
-    margin: 0% 2% 5% 3%;
+    width: 550px;
+    margin: 0% 2% 5% 5%;
     padding: 2%;
     text-align: justify;
     color: white;
@@ -54,7 +53,6 @@ h1 {
     background-repeat: no-repeat;
 }
 
-
 aside {
     float: left;
     margin-left: 9px;
@@ -62,7 +60,6 @@ aside {
     background: url('../img/pat.png'), linear-gradient(#4f8846 1%,#bbae1b 100%);
     border: 3px solid white;
     border-radius: 0px 0px 45px 0px;
-    
 }
 
 aside select {
@@ -79,7 +76,6 @@ aside select[name=row_num] {
 aside select[name=column_num] {
     border-radius: 0px 10px 10px 0px;  
 }
-
 
 h3 {
     font-style: italic;
@@ -114,15 +110,13 @@ h3 {
     border-radius: 0px 0px 35px 0px;
 }
 
-#fake-table {
-    /* width: 80%; */
+#fake-board table {
     margin: 10px auto;
-    columns: 8; 
 }
 
 .fa {
     width: 20px;
-    height: 30px;
+    height: 20px;
     text-align: center;
     margin-bottom: 5px;
     padding: 5px;
