@@ -33,6 +33,10 @@ function init() {
             table.appendChild(tr);
         } 
         game.appendChild(table);
+
+        if ( cols > 5 ) {
+            document.getElementById('wrapper').style.width = '80%';
+        }
     }
 
     function addCardEventListeners() {

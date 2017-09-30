@@ -1,4 +1,5 @@
 body {
+    height: 100vh;    
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;    
     background: linear-gradient(#466788 1%,#9acd9a 100%),#9acd9a;
@@ -6,20 +7,15 @@ body {
 }
 
 header {
-    margin-bottom: 50px;
-    background: linear-gradient(to bottom right, #4f8846, #d6c612);
+    height: 10px;
+    padding: 35px;
+    background-image: url('../img/penguin.png'), url('../img/pat2.png'), linear-gradient(to bottom right, #4f8846, #d6c612);
+    background-position: right top, left top, left top;
+    background-repeat: no-repeat, repeat, no-repeat;
+    background-size: 230px, auto, auto;
     border-width: 5px 0px 5px 0px;
     border-style: solid;
     border-color: #cebe22;
-}
-
-header #image {
-    height: 10px;
-    padding: 35px;
-    background-image: url('../img/penguin.png'), url('../img/pat2.png');
-    background-position: right top, left top;
-    background-repeat: no-repeat, repeat;
-    background-size: 230px, auto;
 }
 
 #game-info-text, #greeting{
@@ -32,6 +28,7 @@ header #image {
     border: 3px solid white;
     
 }
+
 #game-info-text {
     border-radius: 20px 0px 0px 20px;
     border-right: 2px solid #56b695;
@@ -49,6 +46,17 @@ header #image {
     border-radius: 20px;
     box-shadow: 1px 1px 3px 1px black inset;
     
+}
+
+#wrapper {
+    min-height: calc(100% - 140px);
+    width: 60%;
+    margin: 0 auto;
+    padding: 50px 0px 10px;
+    background: url('../img/pat.png'), linear-gradient(#4f8846 1%,#d6c612 100%),#d6c612;
+    border-width: 0px 5px 0px 5px;
+    border-style: solid;
+    border-color: #fff;
 }
 
 #game table {
@@ -82,7 +90,7 @@ header #image {
 
 .button {
     width: 100px;
-    margin: 50px auto;
+    margin: 50px auto 20px;
     padding: 10px;
     text-align: center;
     font-size: 24px;

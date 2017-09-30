@@ -7,25 +7,22 @@
 {% block title %}Memory game{% endblock %}
 {% block content %}
     <header>
-        <div id="image">
-            <span id="game-info-text">
-                You have selected a(n) <span id="game-info-value">{{ rows }} x {{ cols }}</span> board.
-            </span>
-            <span id="greeting">
-                    {% if (rows or cols) < 3 %}
-                        Going for the easy win, huh?
-                    {% elif (rows and cols) > 6 %}
-                        This will take a while
-                    {% else %}
-                        Good luck!
-                    {% endif %}
-            </span>
-        </div>
-    </header> 
+        <span id="game-info-text">
+            You have selected a(n) <span id="game-info-value">{{ rows }} x {{ cols }}</span> board.
+        </span>
+        <span id="greeting">
+                {% if (rows or cols) < 3 %}
+                    Going for the easy win, huh?
+                {% elif (rows and cols) > 6 %}
+                    This will take a while
+                {% else %}
+                    Good luck!
+                {% endif %}
+        </span>
+    </header>
 
-    <div id="game" data-rows='{{ rows }}' data-cols='{{ cols }}' data-cards='{{ cards }}'></div>
-    
-    <div class="button" id="main-page"><a id="back" href="{{url_for('index_page')}}">I give up</a></div>
-
-    
+    <div id="wrapper">
+        <div id="game" data-rows='{{ rows }}' data-cols='{{ cols }}' data-cards='{{ cards }}'></div>
+        <div class="button"><a id="back" href="{{url_for('index_page')}}">I give up</a></div>
+    </div>
 {% endblock %}
