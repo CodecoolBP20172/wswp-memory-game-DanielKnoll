@@ -94,7 +94,7 @@ function init() {
             win.setAttribute('id', 'win');
             win.innerHTML = 'You win!';
             document.getElementById('back').innerHTML = 'New Game';
-            document.getElementById('main-page').style.background = 'green';
+            document.getElementsByClassName('button')[0].style.background = 'green';
         }
     }
 
