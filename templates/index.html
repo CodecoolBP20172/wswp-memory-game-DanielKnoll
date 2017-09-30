@@ -1,23 +1,80 @@
 {% extends "base.html" %}
+{% block import %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='CSS/index_style.css')}}">
+    <script type="text/javascript" src="{{ url_for ('static', filename='JS/index.js')}}"></script>
+{% endblock %}
 {% block title %}Memory game{% endblock %}
 {% block content %}
-    Please select the table size:<br><br>
-    <form action="{{url_for('game_page')}}" method="GET">
-        <select name="row_num">
-            <option selected value="0">Select how many rows</option>
-            {% for i in range(1, 9) %}
-                <option value="{{ i }}">{{ i }}</option>
-            {% endfor %}
-        </select>
+    <h1>Penguin Memory Game</h1>
+    <div id="wrapper">
+        <article id="game-description">
+            <h3>About the game:</h3>            
+            <p>
+            Concentration, also known as Match Match, Match Up, Memory, Pelmanism, Shinkei-suijaku, Pexeso or simply Pairs,
+            is a card game in which all of the cards are laid face down on a surface and two cards are flipped face up over 
+            each turn. The object of the game is to turn over pairs of matching cards. Concentration can be played with any
+            number of players or as solitaire. It is a particularly good game for young children, though adults may find it
+            challenging and stimulating as well. The scheme is often used in quiz shows and can be employed as an educational game.
+            </p>
+            <p>
+            <h3>Rules:</h3>
+            Choose two cards and turns them face up. If they are has the same symbol they will stay that way.
+            If they are not has the same symbol, they will turned face down.
+            The game ends when the last pair has been picked up.
+            </p>
+            <p>
+            <h3>Strategy:</h3>
+            Over the course of the game, it becomes known where certain cards are located, and so upon turning up one card, 
+            players with good memory will be able to remember where they have already seen its pair.>
+            </p>
+            <p>            
+            It is common for many players to think they know where pairs are and to turn over the one they are sure of first, 
+            then be stumped finding its mate. A better strategy is to turn over a less certain card first, so that if wrong, 
+            one knows not to bother turning a more certain card over.
+            </p>
+            <p>            
+            An ideal strategy can be developed if we assume that players have perfect memory. For the One Flip variation below, 
+            this strategy is fairly simple. Before any turn in the game, there are t cards still in play, and n cards still in
+            play but of known value. The current player should flip over an unknown card. If this card matches one of the known
+            cards, the match is next chosen. Less obviously, if the card does not match any known card, one of the n known cards
+            should still be chosen to minimize the information provided to other players. The mathematics follow:
+            </p>
+            <p>       
+            If a remaining unknown card is chosen randomly, there is a 1/(t−1−n) chance of getting a match, but also a n/(t−1−n)
+            chance of providing opponents with the information needed to make a match.
+            </p>
+            <p>
+            There are some exceptions to this rule that apply on the fringe cases, where n = 0 or 1 or towards the end of the game.
+            </p>
+        </article>
 
-        <select name="column_num">
-            <option selected value="0">Select how many columns</option> 
-            {% for i in range(2, 9, 2) %}
-                <option value="{{ i }}">{{ i }}</option>
-            {% endfor %}
-        </select>
+        <div id="penguin"></div>
         
-        <br><br>
-        <input type="submit">
-    </form>
+        <aside id="form">
+            <h3>Please select the table size:</h3>
+                
+            <form action="{{url_for('game_page')}}" method="GET">
+                <select name="row_num" id="rows" required>
+                    <option value="" selected disabled hidden>Select how many rows</option>
+                    {% for i in range(1, 9) %}
+                        <option value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
+
+                <select name="column_num" id="cols" required>
+                    <option value="" selected disabled hidden>Select how many columns</option> 
+                    {% for i in range(2, 9, 2) %}
+                        <option value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                
+                <input type="submit" class="button" value="Game On">
+            </form>
+
+            <h3>Preview:</h3>
+            <div id="fake-board"></div>
+        </aside>
+        
+    </div>
 {% endblock %}

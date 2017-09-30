@@ -1,0 +1,135 @@
+@font-face {
+	font-family: "Snow";
+    src: url("/static/font/CFSnowBall-Regular.ttf");
+}
+
+body {
+    height: 100%;    
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;    
+    background: linear-gradient(#466788 1%,#9acd9a 100%),#9acd9a;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    width: 80%;
+    margin: 0px auto 20px;
+    padding: 5px 0px 20px;
+    text-align: center;
+    font-family: "Snow";
+    font-size: 48px;
+    color: #1665B4;
+    text-shadow: -2px -2px 0px white;
+    background: url('../img/pat2.png'), linear-gradient(#d6c612 1%,#4f8846 100%),#4f8846;
+    border: 3px solid white;
+    border-top: none;
+    border-radius: 0px 0px 45px 45px;
+}
+
+#wrapper {
+    width: 75%;    
+    margin: 0px auto;
+}
+
+
+#game-description {
+    float: left;
+    width: 570px; /*50%;*/
+    margin: 0% 2% 5% 3%;
+    padding: 2%;
+    text-align: justify;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    background: url('../img/pat.png'), linear-gradient(#4f8846 1%,#bbae1b 100%);
+    border: 3px solid white;
+    border-radius: 50px 0px 0px 50px;
+}
+
+#penguin {
+    float: left;
+    height: 210px;
+    width: 425px;
+    margin: 0px auto;
+    background-image: url('../img/penguin.png');
+    background-repeat: no-repeat;
+}
+
+
+aside {
+    float: left;
+    margin-left: 9px;
+    padding: 10px 26px;
+    background: url('../img/pat.png'), linear-gradient(#4f8846 1%,#bbae1b 100%);
+    border: 3px solid white;
+    border-radius: 0px 0px 45px 0px;
+    
+}
+
+aside select {
+    height: 40px;
+    border: 3px solid white;
+    color: white;
+    background-color: #466788;
+}
+
+aside select[name=row_num] {
+    border-radius: 10px 0px 0px 10px;  
+}
+
+aside select[name=column_num] {
+    border-radius: 0px 10px 10px 0px;  
+}
+
+
+h3 {
+    font-style: italic;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+.button {
+    width: 150px;
+    margin: 20px 90px;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    text-shadow: 1px 1px 1px black;   
+    background: green;
+    border: 3px solid white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #015A01;
+}
+
+#fake-board {
+    height: 345px;
+    width: 340px;
+    margin: 0px auto 20px;
+    background: linear-gradient(#466788 1%,#9acd9a 100%),#9acd9a;
+    border: 3px solid white;
+    border-radius: 0px 0px 35px 0px;
+}
+
+#fake-table {
+    /* width: 80%; */
+    margin: 10px auto;
+    columns: 8; 
+}
+
+.fa {
+    width: 20px;
+    height: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 5px;
+    color: white;
+    border: 2px solid white;
+}
+
+.fa::before {
+    font-size: 15px;
+}
