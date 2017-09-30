@@ -21,11 +21,11 @@ function init() {
         let counter = 0;
 
         for (let r = 0; r < rows; r++) {
-            tr = document.createElement("tr");
+            tr = document.createElement('tr');
             for (let c = 0; c < cols; c++) {
-                i = document.createElement("i");
+                i = document.createElement('i');
                 i.setAttribute('class', 'fa fa-4x ' + cardBackground);
-                td = document.createElement("td");
+                td = document.createElement('td');
                 td.appendChild(i);
                 tr.appendChild(td);
                 counter++;
@@ -37,7 +37,7 @@ function init() {
 
     function addCardEventListeners() {
         for (let i = 0; i < cards.length; i++) {
-        cards[i].addEventListener("click", function(event) {
+        cards[i].addEventListener('click', function(event) {
             clickHandler(i);
             });
         }
@@ -61,8 +61,8 @@ function init() {
                         unflip(lastClickedCard, lastCardImage);
                     }, 1000)
                 } else {
-                    clickedCard.style.color = "green";
-                    lastClickedCard.style.color = "green";
+                    clickedCard.style.color = 'green';
+                    lastClickedCard.style.color = 'green';
                     cardsLeft -= 2;
                     victory();
                 }
@@ -85,12 +85,18 @@ function init() {
     function victory() {
         if (cardsLeft === 0) {
             table.parentNode.removeChild(table);
-            var win = document.createElement('h2');
+            let win = document.createElement('h2');
             game.appendChild(win);
-            win.innerHTML = "You win!";
-            document.getElementById("back").innerHTML = "New Game";
+            win.setAttribute('id', 'win');
+            win.innerHTML = 'You win!';
+            document.getElementById('back').innerHTML = 'New Game';
+            document.getElementById('main-page').style.background = 'green';
         }
     }
+
+    $( "#game" ).hover(function() {
+        $( "#win" ).effect( "shake" );
+      });
 
     main();
 }

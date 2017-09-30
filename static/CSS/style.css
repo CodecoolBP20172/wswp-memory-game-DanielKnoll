@@ -51,8 +51,7 @@ header #image {
     
 }
 
-#game {
-    position: relative;
+#game table {
     margin: 0px auto;
 }
 
@@ -76,6 +75,28 @@ header #image {
     background-size: contain;
 }
 
+#back {
+    text-decoration: none;
+    color: white;    
+}
+
+.button {
+    width: 100px;
+    margin: 50px auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    text-shadow: 1px 1px 1px black;   
+    background: red;
+    border: 3px solid white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #9C0101;
+    
+}
 /* Victory sign */
 #game h2 {
     height: 220px;
