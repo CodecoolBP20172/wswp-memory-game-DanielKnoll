@@ -94,13 +94,16 @@ function init() {
 
     function victory() {
         if (cardsLeft === 0) {
-            table.parentNode.removeChild(table);
-            let win = document.createElement('h2');
-            game.appendChild(win);
-            win.setAttribute('id', 'win');
-            win.innerHTML = 'You win!';
-            document.getElementById('back').innerHTML = 'New Game';
-            document.getElementsByClassName('button')[0].style.background = 'green';
+            setTimeout(function() {
+                table.parentNode.removeChild(table);
+                let win = document.createElement('h2');
+                game.appendChild(win);
+                win.setAttribute('id', 'win');
+                win.innerHTML = 'You win!';
+                var button = document.getElementsByClassName('button')[0]
+                button.innerText = 'New Game';
+                button.style.background = 'green';
+            }, 1000)
         }
     }
 
