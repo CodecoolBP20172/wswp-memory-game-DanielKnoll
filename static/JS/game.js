@@ -66,7 +66,9 @@ function init() {
                     }, 1000)
                 } else {
                     clickedCard.style.color = 'green';
-                    lastClickedCard.style.color = 'green';
+                    setTimeout(function() {
+                        lastClickedCard.style.color = 'green';
+                    }, 300)
                     cardsLeft -= 2;
                     victory();
                 }
