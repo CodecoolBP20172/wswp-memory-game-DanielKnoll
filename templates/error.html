@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block import %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='CSS/game_style.css')}}" >    
+{% endblock %}
+{% block title %}Error{% endblock %}
+{% block content %}
+    <header><span class="page-desc">Error</span></header>
+
+    <div id="wrapper">
+        <img src="{{ url_for ('static', filename='img/not_found_logo_6_2.png')}}" alt="Mountain View" id="notFound">
+        <a id="back" href="{{url_for('index_page')}}"><div class="button" >Back</div></a>
+    </div>
+{% endblock %}

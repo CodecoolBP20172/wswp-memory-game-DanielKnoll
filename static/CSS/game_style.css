@@ -124,3 +124,18 @@ header {
     text-shadow: 1px 1px 1px black;
     background-image: url('../img/penguin.png');
 }
+
+/* error page */
+.page-desc {
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 10px;    
+    text-shadow: 1px 1px 1px black;    
+}
+
+#notFound {
+    display: block;
+    margin: auto;
+    width: 40%;
+}

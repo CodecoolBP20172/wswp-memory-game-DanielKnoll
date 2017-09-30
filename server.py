@@ -1,8 +1,6 @@
 from flask import Flask, render_template, redirect, request, url_for
 from functools import wraps
-import werkzeug.exceptions
 from functions import get_necessary_number_of_card_names
-
 app = Flask(__name__)
 
 
@@ -19,6 +17,11 @@ def game_page():
         return redirect(url_for('index_page'))
     cards = get_necessary_number_of_card_names(cols, rows)
     return render_template('game.html', rows=rows, cols=cols, cards=cards)
+
+
+@app.errorhandler(404)
+def handle_404(e):
+    return render_template('error.html', code=404), 404
 
 
 if __name__ == '__main__':
