@@ -75,15 +75,21 @@ function init() {
     }
 
     function flip(clickedCard, classToAdd) {
-        clickedCard.classList.remove(cardBackground);
-        clickedCard.classList.add(classToAdd);
-        clickedCard.classList.add('card-front');
+        clickedCard.classList.add('flip');
+        setTimeout(function() {
+            clickedCard.classList.remove(cardBackground);
+            clickedCard.classList.add(classToAdd);
+            clickedCard.classList.add('card-front');
+        }, 300)
     }
 
     function unflip(clickedCard, classToRemove) {
-        clickedCard.classList.remove(classToRemove);
-        clickedCard.classList.remove('card-front');
-        clickedCard.classList.add(cardBackground);
+        clickedCard.classList.remove('flip');
+        setTimeout(function() {
+            clickedCard.classList.remove(classToRemove);
+            clickedCard.classList.remove('card-front');
+            clickedCard.classList.add(cardBackground);
+        }, 300)
     }
 
     function victory() {

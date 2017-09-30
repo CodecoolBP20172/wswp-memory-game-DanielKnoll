@@ -1,5 +1,5 @@
 body {
-    height: 100%;    
+    height: 100vh;    
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;    
     background: linear-gradient(#466788 1%,#9acd9a 100%),#9acd9a;
@@ -49,7 +49,7 @@ header {
 }
 
 #wrapper {
-    min-height: calc(100% - 140px);
+    min-height: calc(100% - 150px);
     width: 60%;
     margin: 0 auto;
     padding: 50px 0px 10px;
@@ -72,6 +72,9 @@ header {
     border-radius: 5px;
     color: #7d7d7d;
     box-shadow: 1px 1px 1px black;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
 }
 
 .card-back {
@@ -81,6 +84,10 @@ header {
 .card-front {
     background-image: url('../img/front.png');
     background-size: contain;
+}
+
+.flip {
+    transform: rotateY( 180deg );     
 }
 
 #back {
@@ -107,10 +114,10 @@ header {
 }
 /* Victory sign */
 #game h2 {
-    height: 220px;
+    height: 400px;
     width: 425px;
     margin: 0px auto;
-    padding-top: 175px;
+    line-height: 440px;
     text-align: center;
     font-size: 72px;
     color: green;
